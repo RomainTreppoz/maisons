@@ -1,0 +1,721 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png" /> 
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+      <p class="RetraitGauche">
+        <button id="boutonAffichage" name="interrupteur" autofocus/><img src="img/icone_controles.png">Afficher / Masquer les contrôles</button>
+      </p>
+  <nav id="TableauControles" class="RetraitGauche">
+    <div>
+<!--       <p hidden="true">
+        <button id="MasquerChantalPicot" name="interrupteur">Masquer Chantal Picot</button>
+      </p>
+      <p hidden="true">
+        <button id="VisibiliteBellesDemeures" name="interrupteur">Afficher / Masquer Belles Demeures</button>
+      </p> -->
+    </div>
+
+    <form>
+    <div hidden="true">
+    <!-- Couplé avec JS -->
+    <!-- <form method="post" id="formulaire1" action="">
+      <input type="checkbox" id="test" checked>Bouton TEST
+      <input type="submit" onClick="gBox('test'); return false;" />
+    </form> -->
+
+    <input type="radio" name="afficheAvap" value="tout">Affiche tout
+    <input type="radio" name="afficheAvap" value="avap">N'affiche que les AVAP
+    </div>
+
+      <div hidden>
+        <p>
+          <input type="checkbox" id="CheckboxAppartements" value="Appartements" checked>
+            <label for="CheckboxAppartements">Appartements</label>
+          <input type="checkbox" id="CheckboxMaisons" value="Maisons" checked>
+            <label for="CheckboxMaisons">Maisons</label>
+        </p>
+      </div>
+
+      <div hidden>
+        <p>
+          <!-- La ligne Label rend le label cliquable et accroit la surface pour les portables -->
+          <!-- La value est envoyée par exemple value=Century&value=SaintAndre -->
+          <!-- <input type="checkbox" id="CheckboxTousVendeurs" name="vendeur" value="VendeurTous" checked>
+            <label for="CheckboxTousVendeurs">TOUS les vendeurs</label>
+          <span></span><span></span>   -->
+          <p>VENDEURS :</p>
+
+            <fieldset>
+
+              <input type="radio" id="huey" name="drone" checked="">
+              <label for="huey">Tous</label>
+
+              <input type="radio" id="dewey" name="drone" />
+              <label for="dewey">Aucun</label>
+
+              <input type="radio" id="louie" name="drone" disabled >
+              <label for="louie">Partiel</label>
+
+            </fieldset>
+
+
+          <input type="checkbox" id="CheckboxAxo" name="vendeur" value="Axo" checked>
+            <label for="CheckboxAxo">Axo</label>
+          <input type="checkbox" id="CheckboxBellesDemeures" name="vendeur" value="BellesDemeures" checked>
+            <label for="CheckboxBellesDemeures">Belles demeures</label>
+          <input type="checkbox" id="CheckboxChantalPicot" name="vendeur" value="ChantalPicot" checked>
+            <label for="CheckboxChantalPicot">Chantal PICOT</label>
+          <input type="checkbox" id="CheckboxCentury" name="vendeur" value="Century" checked>
+            <label for="CheckboxCentury">Century</label>
+          <input type="checkbox" id="CheckboxCityA" name="vendeur" value="CityA" checked>
+            <label for="CheckboxCentury">CityA</label>
+          <input type="checkbox" id="CheckboxPdC" name="vendeur" value="PdC" checked>
+            <label for="CheckboxPdC">Pierres de Charentes</label>
+          <input type="checkbox" id="CheckboxPichet" name="vendeur" value="Pichet" checked>
+            <label for="CheckboxPichet">Pichet Immobilier</label>
+          <input type="checkbox" id="CheckboxSaintAndre" name="vendeur" value="SaintAndre" checked>
+            <label for="CheckboxSaintAndre">Saint-André</label>
+          <input type="checkbox" id="CheckboxAutresVendeurs" name="vendeur" value="AutresVendeurs" checked>
+            <label for="CheckboxAutresVendeurs">Autres</label>
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <p>QUARTIERS :</p>
+          <input type="checkbox" id="CheckboxBussatte" value="Bussatte" checked>
+            <label for="CheckboxBussatte">Bussatte</label>
+          <input type="checkbox" id="CheckboxHoumeau" value="Houmeau" checked>
+            <label for="CheckboxHoumeau">Houmeau</label>
+          <input type="checkbox" id="CheckboxPlateau" value="Plateau" checked>
+            <label for="CheckboxPlateau">Plateau</label>
+          <input type="checkbox" id="CheckboxRemparts" value="Remparts" checked>
+            <label for="CheckboxRemparts">Remparts</label>
+          <input type="checkbox" id="CheckboxVictorHugo" value="VictorHugo" checked>
+            <label for="CheckboxVictorHugo">Victor Hugo</label>
+          <input type="checkbox" id="CheckboxAutresQuartiers" value="AutresQuartiers" checked>
+            <label for="CheckboxAutresQuartiers">Autres</label>
+        </p>
+      </div>
+
+      <div hidden>
+        <p>
+          <p>ETAT :</p>
+          <input type="checkbox" id="CheckboxVisiter" value="Visiter" checked> A visiter
+          <input type="checkbox" id="CheckboxEnvisager" value="Envisager" checked> A Envisager
+          <input type="checkbox" id="CheckboxEcarter" value="Ecarter"> Ecarté
+          <input type="checkbox" id="CheckboxVendu" value="Vendu"> Vendu
+        </p>
+      </div>
+    </form>
+
+<table>
+    <tr id="Intro">
+      <td>
+        <p class="Romain">On cherche en principe sur le centre-ville (Plateau)</p>
+        <p class="Romain">Nous sommes un peu à l’Est (Bussatte-Victor Hugo)</p>
+        <p class="Romain">Les belles vues seront plutôt orientées au Sud (quartier des remparts avec vue sur le golf, sur Ma Campagne...) mais on peut aussi en trouver au Nord (vue sur la Charente).</p>
+      </td>
+      <td>
+        <p><a href="https://www.google.com/maps/@45.648676,0.1541045,16.32z" target="_blank"><img class="ImageMaison" id="Image 1" src="img/image001.jpg"></a></p>
+      </td>
+    </tr>
+</table>
+      <hr>
+
+  </nav>
+
+<table id="main">
+ <tr class="Maison Remparts VendeurChantalPicot PasBonAccueil">
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat-de-prestige/maison/angouleme-16/saint-ausone-saint-martin-saint-gelais/132484739.htm?LISTING-LISTpg=2&amp;natures=1,2,4&amp;places=%5b%7bci%3a160015%7d%5d&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;types=2&amp;bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 2" src="img/image002.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero PasBonAccueil">001</p>
+  <p class="Vendeur">Chantal PICOT</p>
+  <p class="Romain">Saint Ausone-Saint Martin-Saint Gelais, c’est le rempart sud.</p>
+  <p class="Romain">Quid de la vue&nbsp;?</p>
+  <p class="Romain">Possibilité de vendre sans appartement et garage au prix de 545000€ FAI</p>
+  <p class="Romain">Mais il restera des travaux à faire. C’est très grand</p>
+  </td>
+ </tr>
+
+ <tr class="Maison Plateau VendeurBellesDemeures PasBonAccueil">
+  <td>
+  <p><a href="https://www.bellesdemeures.com/annonces/vente/maison-luxe/angouleme-16/121847007/#?bd=DetailToList_SL&amp;LISTING-LISTpg=3&amp;natures=1,2,4&amp;places=%5b%7bci%3a160015%7d%5d&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;types=2&amp;cmp=INTSL_ListToDetail" target="_blank"><img class="ImageMaison" id="Image 3" src="img/image003.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">002</p>
+  <p class="Vendeur">Belles demeures</p>
+  <p class="Vendeur">Au coeur du vieil Angoulême: Maison historique pleine de charme.</p>
+  <p class="Vendeur">525&nbsp;000€</p>
+  <p class="Romain">La vue&nbsp;? L’accessibilité&nbsp;?</p>
+  <p class="Romain">Joli petit jardin clos</p>
+  </td>
+ </tr>
+
+ <tr class="Appartement AutresQuartiers VendeurAutres Vendu">
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat/maison/angouleme-16/129133783.htm?LISTING-LISTpg=3&amp;natures=1,2,4&amp;places=%5b%7bci:160015%7d%5d&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;types=2&amp;bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 4" src="img/image004.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">003</p>
+  <p class="Vendeur">Groupe Mercure 05.49.60.27.00 - Marie Tanguy 06.07.26.11.32</p>
+  <p class="Romain">À visiter</p>
+  </td>
+ </tr>
+
+
+ <tr class="Maison Plateau VendeurPdC BonAccueil VisiteRS">
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat/maison/angouleme-16/84290837.htm?LISTING-LISTpg=4&amp;natures=1,2,4&amp;places=%5b%7bci:160015%7d%5d&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;types=2&amp;bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 5" src="img/image005.jpg"></a></p>
+  </td>
+   <td>
+  <p class="Numero">004 <span class=Prix>&nbsp;387 000 €</span></p>
+  <p class="Lieu"><a href="https://www.google.com/maps/place/11+Rue+Vauban,+16000+Angoul%C3%AAme/@45.651347,0.1518902,17.03z/data=!4m5!3m4!1s0x47fe2d89ce7c4f45:0x8c26fa1fa03b94f6!8m2!3d45.6505322!4d0.1524175" target="_blank"><img src="img/icone_map_petite.png">11, rue Vauban</a></p>
+  <p class="Vendeur">Pierres de Charentes</p>
+  <p class="Vendeur">CENTRE VILLE DU VIEIL ANGOULEME, belle maison bourgeoise avec jardin intérieur sans vis à vis. Très beaux volumes de pièces: salon 32m²,
+   salle à manger 29m², cuisine 22m², 6 chambres, bureau, salle de jeux 33m².. L'ensemble avec beaucoup de caractère: cheminées, vieux planchers, boiseries,</p>
+  <p class="Romain">17 pièces&nbsp;! Mais assez peu de travaux. Chaudière au gaz en état de marche. Pas d'ascenseur mais envisageable</p>
+  <p class="Romain">Visité avec Sylvie fin juin. Ma préférée pour le moment même si Sylvie la trouve un peu sombre.</p>
+  </td>
+ </tr>
+ 
+ <tr class="Maison AutresQuartiers VendeurPdC PasBonAccueil">
+  <td>
+  <p><a href="https://www.explorimmo.com/annonce-11446965.html" target="_blank"><img class="ImageMaison" id="Image 6" src="img/image006.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">005</p>
+  <p class="Vendeur">Pierres de Charentes</p>
+  <p>Rue calme, gare et centre ville accessible à pied. Belle et vaste maison de ville avec jardin, cave et garage. Entrée, double
+  séjour (parquet, cheminée), cuisine ouverte sur salle à manger, 6 chambres et bureau, salle de bains et 2 salles d'eau. L'ensemble en bon état général.
+  Référence de l'offre : IMBX/02122-8917</p>
+  <p class="Romain">Sympa mais étage(s&nbsp;?) et ne semble pas avoir de vue.</p>
+  <p class="Romain">Photo étrange du jardin</p>
+  </td>
+ </tr>
+ 
+ <tr class="Maison Plateau VendeurSaintAndre PasBonAccueil">
+  <td>
+  <p><a href="https://www.fnaim.fr/annonce-immobiliere/40869988/17-acheter-maison-angouleme-16000.htm" target="_blank"><img class="ImageMaison" id="Image 7" src="img/image007.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">006</p>
+  <p class="Vendeur">Agence Saint André</p>
+  <p class="Romain">780&nbsp;000€&nbsp;: à écarter</p>
+  </td>
+ </tr>
+
+ <tr class="Maison Remparts VendeurSaintAndre PasBonAccueil">
+  <td>
+  <p><a
+  href="https://www.fnaim.fr/annonce-immobiliere/41590311/17-acheter-maison-angouleme-16000.htm" target="_blank"><img class="ImageMaison" id="Image 8" src="img/image008.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">007 doublon de 008 ?<span class="Prix">&nbsp;525 000 €</span></p>
+  <p class="Vendeur">Agence Saint André</p>
+  <p class="Romain">Proche place Victor Hugo mais plutôt remparts. Probablement pas de vue mais un jardin sympa</p>
+  <p class="Romain">Par contre, la piscine n’est pas un avantage</p>
+  </td>
+ </tr>
+
+ <tr class="Maison Remparts VendeurAxo PasBonAccueil">
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat/maison/angouleme-16/saint-ausone-saint-martin-saint-gelais/133336505.htm?natures=1,2,4&amp;places=%5b%7bci:160015%7d%5d&amp;price=NaN/600000&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;surface=120/NaN&amp;types=1,2&amp;bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 9" src="img/image009.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">008 doublon de 007 ?<span class="Prix">&nbsp;525 000 €</span></p>
+  <p class="Vendeur">Axo & Actifs</p>
+  <p class="Vincent">Celle ci est bien mais quartier Ausone, saint Martin saint Gelais (20mn a pied 1km9 de la rue des boissieres)</p>
+  <p class="Romain">Ou bien c'est un doublon de la 007&nbsp;?</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat/maison/angouleme-16/134079177.htm?LISTING-LISTpg=2&amp;natures=1,2,4&amp;places=%5b%7bci:160015%7d%5d&amp;price=NaN/600000&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;surface=120/NaN&amp;types=1,2&amp;bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 10" src="img/image010.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">009</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Vincent">Pareil en distance, 1km9 mais de l’autre côté (Petit Fresquet)</p>
+  <p class="Romain">Un peu loin</p>
+  <p class="Vincent">Oui mais considérer les atouts d'une maison moderne</p>  
+  </td>
+ </tr>
+
+ <tr class="Maison Remparts VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat/maison/angouleme-16/vieil-angouleme-centre-ville/127603095.htm?LISTING-LISTpg=2&amp;natures=1,2,4&amp;places=%5b%7bci:160015%7d%5d&amp;price=NaN/600000&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;surface=120/NaN&amp;types=1,2&amp;bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 11" src="img/image011.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">010 doublon de 032</p>
+  <p class="Vendeur">Leggett immobilier</p>
+  <p class="Vincent">appartement grand et très joli mais pas de vue</p>
+  <p class="Romain">Problème d’escalier&nbsp;: ascenseur aménageable&nbsp;?</p>
+  </td>
+ </tr>
+
+ <tr class="Appartement Plateau VendeurPdC BonAccueil">
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat/maison/angouleme-16/134837553.htm?LISTING-LISTpg=3&amp;natures=1,2,4&amp;places=%5b%7bci:160015%7d%5d&amp;price=NaN/600000&amp;projects=2&amp;qsversion=1.0&amp;sort=d_px&amp;surface=120/NaN&amp;types=1,2&amp;bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 12" src="img/image012.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero BonAccueil">011<span class="Prix">&nbsp;418 000 €</span></p>
+  <p class="Vendeur">Pierres de Charentes</p>
+  <p class="Vendeur">CENTRE, belle maison de ville offrant une agréable terrasse ensoleillée, un point de vue dégagé et un vaste garage et cave !
+   2 salons, cuisine, 4 chambres, 2 salles d'eau.. L'ensemble en très bon état.</p>
+  <p class="Romain">155m2, terrasse, vue. Si ascenseur possible</p>
+  <p class="Romain">Ascenseur impossible mais monte personnes, oui. Pas pu visiter fin juin mais gardé en projet</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://proprietes.lefigaro.fr/annonces/propriete-charente-poitou+charentes-france/16282265/" target="_blank"><img class="ImageMaison" id="Image 13" src="img/image013.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">012</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Romain">398m2&nbsp;: sérieux&nbsp;?</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.explorimmo.com/annonce-16179187.html" target="_blank"><img class="ImageMaison" id="Image 14" src="img/image014.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">013</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Romain">10 pièces, 320m2, piscine… ça ne me semble pas correspondre</p>
+  </td>
+ </tr>
+
+ <tr class="Maison Plateau VendeurPdC VisiteRS">
+  <td>
+  <p><a href="https://www.explorimmo.com/annonce-5935868.html" target="_blank"><img class="ImageMaison" id="Image 15" src="img/image015.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">014<span class="Prix">&nbsp;441&nbsp;000€ mais partirait à 380&nbsp;000€</span></p>
+  <p class="Lieu"><a href="https://www.google.com/maps/place/9+Avenue+des+Mar%C3%A9chaux,+16000+Angoul%C3%AAme/@45.6474847,0.1546127,465m/data=!3m1!1e3!4m5!3m4!1s0x47fe32782efd1dc9:0xe2ac9d05196a8371!8m2!3d45.6476318!4d0.1548632" target="_blank"><img src="img/icone_map_petite.png">9, avenue des Maréchaux</a></p>
+  <p class="Vendeur">Pierres de Charentes</p>
+  <p class="Vendeur">Située au coeur du triangle Préfecture, Théâtre et Hôtel de Ville d'Angoulême, Hotel Particulier
+  de caractère de 350m². Belles pièces de réception (68m²)avec cheminée marbre et parquets chêne, 7 chambres, 2 bureaux... Ascenseur aux normes, magnifiques
+  caves voutées et agréable jardin sur l'arrière en font un produit d'exception! Référence de l'offre : IMBX/01330-8796</p>
+  <p class="Romain">Très central, ascenseur 4 niveaux.  Chaudière agée mais fonctionne. Invendue depuis des années. Bien placée, à 2 pas de l'hôtel de ville. Mais immense, même en limitant les travaux aux deux premiers niveaux.</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1449273225.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 16" src="img/image016.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">015</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Vincent">Plus pas mal de trucs sur le bon coin</p>
+  <p class="Romain">5 minutes du plateau, c’est où&nbsp;? Manque de caractère</p>
+  </td>
+ </tr>
+ 
+ <tr class="Maison Bussatte VendeurCentury PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1449109215.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 17" src="img/image017.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">016</p>
+  <p class="Vendeur">Century 21 Aloha</p>
+  <p class="Romain">Maison sympa, pas trop chère, dans notre quartier</p>
+  <p class="Romain">Probablement pas de vue par contre</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurCityA PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1448739658.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 18" src="img/image018.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">017</p>
+  <p class="Vendeur">Agence INVESTISSIMO</p>
+  <p class="Romain">Encore une piscine&nbsp;?</p>
+  <p class="Romain">Probablement trop loin du centre</p>
+  </td>
+ </tr>
+
+ <tr class="Appartement Remparts VendeurCityA VisiteRS">
+  <td>
+  <p><a href="https://www.citya.com/annonces/vente/appartement/angouleme-16000/7-pieces-t7/TAPP302989.html" target="_blank"><img class="ImageMaison" id="Image 19" src="img/image019.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">018<span class="Prix">&nbsp;445&nbsp;000€</span></p>
+  <p class="Lieu"><a href="https://www.google.com/maps/place/11+Avenue+du+Pr%C3%A9sident+Wilson,+16000+Angoul%C3%AAme/@45.6491186,0.1469684,815m/data=!3m1!1e3!4m5!3m4!1s0x47fe2d88c7ade22d:0xb1e05e47c304a991!8m2!3d45.6491827!4d0.1488521" target="_blank"><img src="img/icone_map_petite.jpg">11, avenue du Président Wilson</a></p>
+  <p class="Vendeur">Citya Alliance Immobilier (Sébastien Bordier)</p>
+  <p class="Romain">Visité fin juin avec Sylvie. Très belle vue, le jardin vert derrière. On pourrait mettre un élévateur et même une terrasse en façade (plans de l'archi dispos). Par contre, la rue en pente pour rejoindre le centre ville nous fait renoncer.</p>
+  </td>
+ </tr>
+
+ <tr class="Maison VictorHugo VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1443670769.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 20" src="img/image020.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">019</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Romain">Quartier Victor Hugo, c’est sympa mais quid de la vue</p>
+  <p class="Romain">Encore une piscine</p>
+  <p class="Romain">Ascenseur&nbsp;?</p>
+  </td>
+ </tr>
+
+ <tr class="Maison VictorHugo VendeurPichet BonAccueil VisiteRS">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1382936027.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 21" src="img/image021.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero BonAccueil">020<span class="Prix">&nbsp;318 000 €</span></p>
+  <p class="Lieu"><a href="https://www.google.com/maps/place/400+Rue+de+P%C3%A9rigueux,+16000+Angoul%C3%AAme/@45.6447,0.177882,315m/data=!3m1!1e3!4m5!3m4!1s0x47fe325a5a747a97:0x30a7fae2bab7c1c5!8m2!3d45.6449042!4d0.1796572" target="_blank"><img src="img/icone_map_petite.jpg">400, rue de Périgueux</a></p>
+  <p class="Vendeur">Agence Pichet, place Victor Hugo, Immobilier 05 45 69 19 07</p>
+  <p class="Romain">En limite de Soyaux, proche de la caserne. Visité fin juin avec Sylvie et abandonné : aurait été très bien si plus central.</p>
+  <p class="Romain">Vu ailleurs cette maison aux deux palmiers</p>
+  </td>
+ </tr>
+
+  <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1434734677.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 22" src="img/image022.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">021</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Romain">4 niveaux&nbsp;: c’est peu raisonnable</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1434419341.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 23" src="img/image023.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">022</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Romain">10 minutes du centre à pieds&nbsp;? N’en donne pas l’impression.</p>
+  <p class="Romain">Peu de photos</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1398585556.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 24" src="img/image024.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">023</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Vendeur">Quartier Saint Gelais</p>
+  <p class="Vendeur">Pourquoi pas mais 3 niveaux, piscine hors sol.</p>
+  <p class="Vendeur">La vue&nbsp;?</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1392263672.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 25" src="img/image025.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">024</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Vendeur">8 pièces, 172m2</p>
+  <p class="Romain">Des demi-niveaux trop compliqués</p>
+  <p class="Romain">Une piscine encore génératrice de frais</p>
+  </td>
+ </tr>
+
+ <tr class="Maison Plateau VendeurCentury PasBonAccueil Vendu">
+  <td>
+  <p><a href="https://www.leboncoin.fr/ventes_immobilieres/1421639127.htm/?ca=20_s" target="_blank"><img class="ImageMaison" id="Image 26" src="img/image026.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">025</p>
+  <p class="Vendeur">Century21 Aloha</p>
+  <p class="Romain">7 pièces, 160 m², 355&nbsp;000€</p>
+  <p class="Romain">Quartier Plateau, très belle maison de ville en parfait état général fonctionnelle et lumineuse sur deux niveaux seulement.</p>
+  <p class="Romain">Insuffisamment de photos pour se faire une idée</p>
+  </td>
+ </tr>
+
+ <tr class="Appartement AutresQuartiers VendeurSaintAndre PasBonAccueil">
+  <td>
+  <p><a href="http://www.etude-st-andre.com/acheter/452-appartement-t6-angouleme" target="_blank"><img class="ImageMaison" id="Image 27" src="img/image027.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">026</p>
+  <p class="Vendeur">Agence Saint André</p>
+  <p class="Romain">Belle vue mais appartement avec juste un balcon</p>
+  <p class="Romain">Co-propriété avec piscine, donc charges</p>
+  </td>
+ </tr>
+
+ <tr class="Maison Plateau VendeurSaintAndre PasBonAccueil">
+  <td>
+  <p><a href="http://www.etude-st-andre.com/acheter/24-maison-bourgeoise-belle-adresse-angouleme-plateau" target="_blank"><img class="ImageMaison" id="Image 28" src="img/image028.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">027<span class="Prix">&nbsp;577 000 € HAI</span></p>
+  <p class="Vendeur">Agence Saint André</p>
+  <p class="Romain">Angoulême plateau c’est bien. 6 pièces, 300m2 c’est sympa</p>
+  <p class="Romain">Vue, terrasse semblent bien mais c’est très cher</p>
+  <p class="Romain">Et il y a 3 niveaux&nbsp;!</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres PasBonAccueil">
+  <td>
+  <p><a href="http://www.etude-st-andre.com/acheter/481-maison-darchitecte-angouleme" target="_blank"><img class="ImageMaison" id="Image 29" src="img/image029.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">028</p>
+  <p class="Vendeur">Agence ?</p>
+  <p class="Vincent">Un peu grand</p>
+  <p class="Romain">Oui, trop grand, trop cher (577000€), trop la piscine.</p>
+  <p class="Romain">Et puis il n’y a QUE 2 pianos&nbsp;!</p>
+  </td>
+ </tr>
+
+ <tr class="Maison VictorHugo VendeurSaintAndre BonAccueil">
+  <td>
+  <p><a href="https://www.fnaim.fr/annonce-immobiliere/39810615/17-acheter-maison-angouleme-16000.htm" target="_blank"><img class="ImageMaison" id="Image 30" src="img/image030.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">029<span class="Prix">&nbsp;315 000 €</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">192m2, 8 pièces</p>
+  <p class="Romain">Proche de la Place Victor Hugo, jardin, pas de vue je crois.</p>
+  <p class="Romain">Visite de la 29 et de la 31 prévue fin juin annulée. L'une des deux est provisoirement retirée de la vente : on garde en projet.</p>
+  </td>
+ </tr>
+ 
+ <tr class="Maison Plateau VendeurSaintAndre">
+  <td>
+  <p><a href="https://www.fnaim.fr/annonce-immobiliere/41041338/17-acheter-maison-angouleme-16000.htm" target="_blank"><img class="ImageMaison" id="Image 31" src="img/image031.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">030<span class="Prix">&nbsp;360 400 €</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">360&nbsp;400€</p>
+  <p class="Romain">Centre ville, 150m2, terrasse, 4 pièces dont 3 chambres</p>
+  <p class="Romain">Un peu de mal à comprendre la disposition. Des niveaux&nbsp;?</p>
+  </td>
+ </tr>
+ 
+ <tr class="Appartement Remparts VendeurSaintAndre BonAccueil">
+  <td>
+  <p><a href="https://www.fnaim.fr/annonce-immobiliere/38450740/17-acheter-maison-angouleme-16000.htm" target="_blank"><img class="ImageMaison" id="Image 32" src="img/image032.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">031<span class="Prix">&nbsp;399 000 €</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Romain">Centre ville, terrasse et belle vue sur le golf. 4 chambres, 2 salles d’eau, séjour de 50m2</p>
+  <p class="Romain">Intéressant mais peu d’infos (niveaux, accessibilité)</p>
+  <p class="Romain">Visite de la 29 et de la 31 prévue fin juin annulée. L'une des deux est provisoirement retirée de la vente : on garde en projet.</p>
+  </td>
+ </tr>
+
+ <tr class="Maison Remparts VendeurSaintAndre PasBonAccueil">
+  <td>
+  <p><a href="https://www.fnaim.fr/annonce-immobiliere/38461327/17-acheter-maison-angouleme-16000.htm" target="_blank"><img class="ImageMaison" id="Image 33" src="img/image033.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">032 doublon de 010</p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Romain">Jardin tout encaissé</p>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurPdC"> 
+  <td>
+  <p><a href="https://www.seloger.com/annonces/achat/maison/angouleme-16/135214065.htm?LISTING-LISTpg=2&natures=1,2,4&places=%5b%7bci%3a160015%7d%5d&price=300000%2f550000&projects=2,5&qsversion=1.0&surface=162%2fNaN&types=2&bd=ListToDetail" target="_blank"><img class="ImageMaison" id="Image 34" src="img/image034.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero BonAccueil">033<span class="Prix">&nbsp;330 000 €</span></p>
+  <p class="Vendeur">Pierres de Charentes</p>
+  <p class="Vendeur">7 pièces, 4 chambres dont 3 à l'étage. Terrain de 1216m2</p>
+  <p class="Vincent">Moderne et fonctionel. S'il y a des commerces proches, ce serait bien</p>
+  <p class="Romain">Renoncé à cette visite avec Sylvie fin juin. Nous semble trop excentrée (quartier de Ma Campagne)</p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Appartement Plateau VendeurSaintAndre"> 
+  <td>
+  <p><a href="https://www.bienici.com/annonce/vente/angouleme/appartement/7pieces/ag160306-139321808?q=%2Frecherche%2Fachat%2Fangouleme-16000%2Fappartement%2F4-pieces-et-plus%3Fprix-max%3D400000%26surface-min%3D100" target="_blank"><img class="ImageMaison" id="Image 35" src="img/image035.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">034<span class="Prix">&nbsp;210 900 €</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">Angoulême Tribunal. Bureaux / Appartement de plus de 150 m² avec 7 pièces - Beaux espaces pour ce plateau situé au 2ème étage dans un ancien immeuble Angoumoisin avec ascenseur. Très lumineux.</p>
+  <p class="Romain">Pas de terrasse ni probablement de balcon</p>
+  <p class="Vincent">On dirait encore des bureaux et a priori pas de vue mais la surface commence a être sympa</p>
+  </td>
+  </td>
+ </tr>
+
+
+ <tr class="Maison Houmeau VendeurAutres"> 
+  <td>
+  <p><a href="http://www.logic-immo.com/detail-vente-7236760d-ff90-1e05-7c9a-2edb01f0f867.htm" target="_blank"><img class="ImageMaison" id="Image 36" src="img/image036.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">036<span class="Prix">&nbsp;364 000 €</span></p>
+  <p class="Vendeur">Jaumotte Pascale 06.25.92.69.23</p>
+  <p class="Vendeur">A vendre, très belle demeure de standing de 250m2 environ. 7 pièces sur 3 niveaux avec grand jardin sans vis à vis en plein coeur du quartier de l'Houmeau.</p>
+  <p class="Vincent">Et le quartier de l’Houmeau, en bord de Charente ? Papa aime bien les fleuves</p>
+  <p class="Romain">C'est un quartier en plein changement, avec la médiathèque. Trop tôt pour s'y installer ? Ou bien à voir</p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Maison Bussatte VendeurAutres"> 
+  <td>
+  <p><a href="http://www.logic-immo.com/detail-vente-da2d0b76-e757-0225-fb6b-ab29496502a7.htm" target="_blank"><img class="ImageMaison" id="Image 37" src="img/image037.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">037<span class="Prix">&nbsp;298 451 €</span></p>
+  <p class="Vendeur">Marc Yonnet 06.47.32.71.27 </p>
+  <p class="Vendeur">173 m², 10 pièces sur 3 niveaux</p>
+  <p class="Vincent">Celle la semble proche de chez vous ?</p>
+  <p class="Romain">Oui : quartier de La Bussatte</p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurAutres"> 
+  <td>
+  <p><a href="http://www.logic-immo.com/detail-vente-cb5dbf7d-389c-dfc5-bcbb-12561224b872.htm" target="_blank"><img class="ImageMaison" id="Image 38" src="img/image038.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">038<span class="Prix">&nbsp;296 800 €</span></p>
+  <p class="Vendeur">SNB immobilier 09.73.01.44.38</p>
+  <p class="Vendeur">180 m2 - 7 pièces. Située sur Angoulême à proximité de commerces, services et écoles.</p>
+  <p class="Vincent">Celle la a un jardin comme à Pépieux elle est sur 2 agences mais apparemment au pied du plateau</p>
+  <p class="Romain"></p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Maison AutresQuartiers VendeurSaintAndre"> 
+  <td>
+  <p><a href="https://www.fnaim.fr/annonce-immobiliere/39386880/17-acheter-maison-angouleme-16000.htm" target="_blank"><img class="ImageMaison" id="Image 39" src="img/image039.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">039<span class="Prix">&nbsp;475 650 € €</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">Maison sur les bords de la Charente. Belle demeure Charentaise avec accès privé au fleuve - 7 pièces - Dépendances. Le tout en excellent état général.</p>
+  <p class="Vincent">Sur le bord de la charente</p>
+  <p class="Romain">Celle-là fait réver ! 6 pièces, 270m2. Reste à voir où elle est. Et c'est probablement peu raisonnable.</p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Maison VictorHugo VendeurSaintAndre"> 
+  <td>
+  <p><a href="http://www.etude-st-andre.com/acheter/361-opportunite-angouleme-victor-hugo" target="_blank"><img class="ImageMaison" id="Image 40" src="img/image040.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">040<span class="Prix">&nbsp;315 000 € H.A.I.</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">3 niveaux, 8 pièces, 192m2</p>
+  <p class="Vincent">Saint andré qui en a quand même beaucoup</p>
+  <p class="Romain">Mignon petit jardin de 150m2 mais pas de vue</p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Maison Plateau VendeurSaintAndre"> 
+  <td>
+  <p><a href="http://www.etude-st-andre.com/acheter/445-belle-maison-bourgeoise-du-plateau-a-renover-angouleme" target="_blank"><img class="ImageMaison" id="Image 41" src="img/image041.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">041<span class="Prix">&nbsp;441 000 €</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">Maison bourgeoise du plateau 343m², 9 pièces, 4 niveaux</p>
+  <p class="Vincent">Saint andré qui en a quand même beaucoup</p>
+  <p class="Romain">C'est à rénover. On en a vu plein des comme ça mais avec la rénovation, ça double le budget.</p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Maison VictorHugo VendeurSaintAndre"> 
+  <td>
+  <p><a href="http://www.etude-st-andre.com/acheter/434-maison-du-xixeme-angouleme-victor-hugo" target="_blank"><img class="ImageMaison" id="Image 42" src="img/image042.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">042<span class="Prix">&nbsp;243 500 € HAI</span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">170 m² - 6 pièces sur 3 niveau.</p>
+  <p class="Vincent">Saint andré qui en a quand même beaucoup</p>
+  <p class="Romain"></p>
+  </td>
+  </td>
+ </tr>
+
+ <tr class="Maison VictorHugo VendeurSaintAndre"> 
+  <td>
+  <p><a href="http://www.etude-st-andre.com/acheter/435-maison-ancienne-entierement-renovee-angouleme-victor-hugo" target="_blank"><img class="ImageMaison" id="Image 43" src="img/image043.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">043<span class="Prix">&nbsp;498 750 € H.A.I. </span></p>
+  <p class="Vendeur">Saint André</p>
+  <p class="Vendeur">7 pièces, 203 m2, entièrement rénovée. Quartier Victor Hugo</p>
+  <p class="Vincent">Celle la me parait vraiment bien a Victor Hugo. J’ai donné mes coordonnées à St André en précisant que tu était déjà en contact avec eux</p>
+  <p class="Romain">Oui, mais elle commence à être chère</p>
+  </td>
+  </td>
+ </tr>
+
+<tr class="Maison AutresQuartiers VendeurAutres"> 
+  <td>
+  <p><img class="ImageMaison" id="Image 43" src="img/image044.jpg"></a></p>
+  </td>
+  <td>
+  <p class="Numero">044<span class="Prix">  TAJ MAHAL</span></p>
+  <p class="Vendeur">Vendeur inconnu</p>
+  <p class="Vendeur">Beaucoup de pièces, entièrement rénové.</p>
+  <p class="Romain">Naaan, trop loin, trop cher, trop frime. Et cette eau doit attirer les moustiques.</p>
+  </td>
+  </td>
+ </tr>
+
+</table>
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
